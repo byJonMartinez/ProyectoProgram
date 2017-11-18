@@ -1,7 +1,10 @@
 
+import java.util.Observer;
 
-//import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
+import java.util.Observer;
 
+//Falta el tema de la dificultad.
 public class Tablero {
 	
 		//Atributos
@@ -15,10 +18,11 @@ public class Tablero {
 		tablaCasillas = new Casilla[pX][pY];
 		x = pX;
 		y = pY;
+		//Falta dificultad
 		
 	}
-	/**
-		//metodos
+	
+		//Métodos
 	public void destaparMinas(){
 		for (int i=0 ; i<=x-1 ; i++){
 			for (int j=0 ; j<=y-1 ; j++){
@@ -27,8 +31,10 @@ public class Tablero {
 				}
 			}
 		}
+		Cronometro.getCronometro().pararCronometro();
+		JOptionPane.showMessageDialog(null,"Has perdido");
 	}
-	**/	
+	
 	
 	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla){		
 		tablaCasillas[pLongitud][pAltura] = unaCasilla;
@@ -41,23 +47,56 @@ public class Tablero {
 	}
 	
 	
-	public boolean esMina(){
-		
+	public boolean esMina(int pX, int pY){
+		if((0<=pX && pX<=x-1) && (0<=pY && pY<=x-1)){
+			if(tablaCasillas[pX][pY] instanceof CasillaMina){
+				return true;
+			}
+		}
 		return false;
 	}
 	
 	
-	public void destapar(){
+	public void destapar(int pX, int pY){
 		
+		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
+			tablaCasillas[pX][pY].destapar(pX, pY);	
+		}
 
 	}
 	
-	public void marcar(){
+	public void marcar(int pX , int pY){
 		
+		if((0<=pX && pX<=x-1) && (0<=pY && pY<=y-1)){
+			tablaCasillas[pX][pY].marcar(pX, pY);	
+		}
 
 	}
 
+	public void destaparVecinos(int px, int py){
+			
+			this.destapar(px+1,py);
+			this.destapar(px+1,py-1);
+			this.destapar(px,py-1);
+			this.destapar(px-1,py-1);
+			this.destapar(px-1,py);
+			this.destapar(px-1,py+1);
+			this.destapar(px,py+1);
+			this.destapar(px+1,py+1);
+		}
 	
+	public void decrementar(){
+		casillasSinMina--;
+		if(casillasSinMina<=1){
+			int punt = Cronometro.getCronometro().pararCronometro();
+			JOptionPane.showMessageDialog(null,"Has ganado");
+			Buscaminas.getBuscaminas().terminarPartida(punt);
+		}
+	}
+	
+	public void anadirObserver(Observer pObservador, int x, int y){
+		this.tablaCasillas[x][y].addObserver(pObservador);
+	}
 	
 
 

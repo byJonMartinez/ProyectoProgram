@@ -3,64 +3,75 @@ import java.io.IOException;
 import java.util.Observer;
 
 import javax.swing.JOptionPane;
+//Falta el tema de las puntuaciones
 
 public class Buscaminas {
-	//Atributos
-	private static Buscaminas miBuscaminas = new Buscaminas();
-
-	private String usuarioActual;
-	private int dificultadActual;
-
-
-
-	//Constructor
-	private Buscaminas(){
-	}
+	
+		//Atributos
+		private static Buscaminas miBuscaminas = new Buscaminas();
+		private Tablero tablero;
+		private String usuarioActual;
+		private int dificultadActual;
+		//private Puntuaciones punt;
 
 
-	//Métodos
-	public static Buscaminas getBuscaminas(){
-		return miBuscaminas;
-	}
+		//Constructor
+		private Buscaminas(){
+		}
 
 
-	public void terminarPartida(int p){
-
-	}
-
-	public void crearTablero(){
-	}
+		//Métodos
+		public static Buscaminas getBuscaminas(){
+			return miBuscaminas;
+		}
 
 
-	public void abrirCasilla(){
+		public void terminarPartida(int p){
+
+		}
+
+		public void crearTablero(int pDificultad){
+			//Primero la clase Builder
+		}
+
+
+		public void abrirCasilla(int pX, int pY){
+			if(tablero!=null)
+			{
+				this.tablero.destapar(pX, pY);
+			}
+		}
+
 		
-	}
+		public void marcarCasilla(int pX, int pY){
+			if (tablero!=null)
+				this.tablero.marcar(pX, pY);
+		}
 
-	
-	public void marcarCasilla(){
-
-	}
-
-	
-	public void setUsuario(){
-
-	}
-	
-	
-	public void destaparMinas(){
-
-	}
-	
-	
-	public void decrementar(){
-
-	}
-	
-	
-	public void destaparVecinos(int px, int py){
-
-	}
-	
+		
+		public void setUsuario(String u)
+		{
+			this.usuarioActual=u;
+		}
+		
+		
+		public void destaparMinas(){
+			tablero.destaparMinas();
+		}
+		
+		
+		public void decrementar(){
+			tablero.decrementar();
+		}
+		
+		
+		public void destaparVecinos(int px, int py){
+			tablero.destaparVecinos(px, py);
+		}
+		
+		public void anadirObserver(Observer pObservador, int x, int y){
+			this.tablero.anadirObserver(pObservador, x, y);
+		}
 	
 
 }
