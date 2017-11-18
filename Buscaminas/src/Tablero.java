@@ -28,7 +28,7 @@ public class Tablero {
 			}
 		}
 	}
-		
+	**/	
 	
 	public void insertarCasilla(int pLongitud, int pAltura, Casilla unaCasilla){		
 		tablaCasillas[pLongitud][pAltura] = unaCasilla;
@@ -57,7 +57,7 @@ public class Tablero {
 
 	}
 
-	**/
+	
 	
 
 
