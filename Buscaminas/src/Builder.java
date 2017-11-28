@@ -36,8 +36,8 @@ public class Builder {
 			}
 		}
 		
-		//Falta la dificultad como parámetro
-		Tablero tablero = new Tablero(x,y /**dificultad**/);
+		
+		Tablero tablero = new Tablero(x, y, pDificultad);
 		tablero = insertarVacias(tablero, x, y);	
 		tablero = insertarMinas(tablero, pDificultad, x, y);
 		tablero = insertarNumeros(tablero,x ,y);

@@ -14,7 +14,7 @@ public class Tablero {
 	private int casillasSinMina;
 	
 		//Constructor
-	public Tablero(int pX,int pY){
+	public Tablero(int pX,int pY, int pDificultad){
 		tablaCasillas = new Casilla[pX][pY];
 		x = pX;
 		y = pY;

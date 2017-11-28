@@ -12,7 +12,7 @@ public class Buscaminas {
 		private Tablero tablero;
 		private String usuarioActual;
 		private int dificultadActual;
-		//private Puntuaciones punt;
+		private Puntuaciones punt;
 
 
 		//Constructor
@@ -27,11 +27,12 @@ public class Buscaminas {
 
 
 		public void terminarPartida(int p){
-
+			//relacionar con puntuaciones
 		}
 
 		public void crearTablero(int pDificultad){
-			//Primero la clase Builder
+			tablero = Builder.getBuilder().crearTablero(pDificultad);
+			this.dificultadActual=pDificultad;
 		}
 
 
