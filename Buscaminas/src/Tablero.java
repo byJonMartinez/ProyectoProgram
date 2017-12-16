@@ -18,8 +18,8 @@ public class Tablero {
 		tablaCasillas = new Casilla[pX][pY];
 		x = pX;
 		y = pY;
-		//Falta dificultad
-		
+		casillasSinMina = (x*y) - numMinas(pDificultad);
+
 	}
 	
 		//Métodos

@@ -111,7 +111,7 @@ public abstract class Puntuaciones {
 		return ps;
 	}
 	
-	public void escribirPuntuaciones(){
+	public void escribirPuntuaciones() throws IOException{
 		
 	}
 }

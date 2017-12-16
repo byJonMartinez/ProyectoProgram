@@ -23,7 +23,7 @@ public class CasillaMina extends Casilla{
 		tapada = false;
 		marcada = false;
 		this.setChanged();
-	
+		this.notifyObservers(9);
 	}
 
 }

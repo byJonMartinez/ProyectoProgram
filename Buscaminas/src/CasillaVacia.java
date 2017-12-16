@@ -18,7 +18,7 @@ public class CasillaVacia extends Casilla {
 			Buscaminas.getBuscaminas().decrementar();
 			Buscaminas.getBuscaminas().destaparVecinos(pX, pY);
 			this.setChanged();
-			
+			this.notifyObservers(0);
 			}
 		}
 		

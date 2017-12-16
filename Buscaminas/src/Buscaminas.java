@@ -27,7 +27,35 @@ public class Buscaminas {
 
 
 		public void terminarPartida(int p){
-			//relacionar con puntuaciones
+			tablero=null;
+			switch(dificultadActual)
+			{
+			case 1:punt = PuntuacionesFacil.getPuntuacionesFacil();break;
+			case 2:punt = PuntuacionesMedio.getPuntuacionesMedio();break;
+			case 3:punt = PuntuacionesDificil.getPuntuacionesDificil();break;
+			}
+			if (p!=0)
+			{			
+				punt.anadirPuntuacion(new Puntuacion(usuarioActual,p));
+				try {
+					punt.escribirPuntuaciones();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			String ps =punt.mostrarPuntuacion();
+			JOptionPane.showMessageDialog(null,ps, "Puntuaciones " + 1, JOptionPane.INFORMATION_MESSAGE, null);
+
+			
+			JugarDeNuevo frame = new JugarDeNuevo();
+			frame.setVisible(true);
+			frame.setSize(400, 275);
+			frame.setResizable(false);
+
+
+			
 		}
 
 		public void crearTablero(int pDificultad){
