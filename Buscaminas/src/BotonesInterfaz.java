@@ -1,10 +1,12 @@
+
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 
+public class BotonesInterfaz extends JPanel {
 
-
-public class BotonInterfaz extends JPanel {
-	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	//Atributos
 	private Boton [][] arraybotones; 
@@ -12,8 +14,8 @@ public class BotonInterfaz extends JPanel {
 	int y;
 	
 	
-	//Constructor
-	public BotonInterfaz(int pX, int pY){
+	//Constructora
+	public BotonesInterfaz(int pX, int pY){
 		x = pX;
 		y = pY;
 		crearBotones();
@@ -21,7 +23,7 @@ public class BotonInterfaz extends JPanel {
 	
 	
 	
-	//Métodos	
+	//Metodos	
 	public void crearBotones(){
 		arraybotones = new Boton [x][y];
 		setLayout(new GridLayout(x,y,0,0));
@@ -34,5 +36,6 @@ public class BotonInterfaz extends JPanel {
 			}
 		}
 	}
+	
 	
 }

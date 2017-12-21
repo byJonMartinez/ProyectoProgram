@@ -1,6 +1,6 @@
 
-public class Puntuacion {
 
+public class Puntuacion {
 	private String	usuario;
 	private int	punt;
 

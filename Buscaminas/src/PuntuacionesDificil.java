@@ -1,10 +1,11 @@
+
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class PuntuacionesDificil extends Puntuaciones{
-
+public class PuntuacionesDificil extends Puntuaciones {
 	private static PuntuacionesDificil miPuntuacionesDificil;
 
 	private PuntuacionesDificil(String p){
@@ -23,7 +24,7 @@ public class PuntuacionesDificil extends Puntuaciones{
 	public void escribirPuntuaciones()throws IOException {
 		
 		int i = 0;
-		String ruta = "C:\\Users\\FAMILIA FELIZ\\git\\ProyectoProgram\\Buscaminas\\src\\pDificil.txt";
+		String ruta = "C:\\Users\\FAMILIA FELIZ\\git\\ProyectoProgram\\Buscaminas\\src";
 		File archivo = new File(ruta);
 		BufferedWriter bw;
 		bw = new BufferedWriter(new FileWriter(archivo));
@@ -37,5 +38,4 @@ public class PuntuacionesDificil extends Puntuaciones{
 		bw.close();
 
 	}
-	
 }

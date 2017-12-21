@@ -1,23 +1,23 @@
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-
-
 public abstract class Puntuaciones {
 
 	protected Puntuacion[]	lista;
-	
+
+	//	public Puntuaciones(){
+	//Puntuaciones("pFacil.txt");
+	//	}
+
 	public Puntuaciones() {
 
 	}
 
-	
-	
-	
 	public void anadirPuntuacion(Puntuacion p){
 		
 		Puntuacion aux= null;
@@ -74,9 +74,11 @@ public abstract class Puntuaciones {
 			}
 		}
 	}
+
 	
-	protected void cargarPuntuaciones(String pFileName){
-		
+
+	protected void cargarPuntuaciones(String pFileName) 
+	{
 		InputStream in = getClass().getResourceAsStream(pFileName);
 		BufferedReader fichero = new BufferedReader(new InputStreamReader(in));
 		Scanner sc = new Scanner(fichero);
@@ -98,9 +100,9 @@ public abstract class Puntuaciones {
 		}
 		sc.close();
 	}
-	
-	public String mostrarPuntuacion(){
-		
+
+	public String mostrarPuntuaciones()
+	{
 		String ps = "";
 		int i = 0;
 		while(i<=4 && lista[i] != null)
@@ -111,7 +113,10 @@ public abstract class Puntuaciones {
 		return ps;
 	}
 	
-	public void escribirPuntuaciones() throws IOException{
-		
+	public void escribirPuntuaciones() throws IOException
+	{
+
 	}
+	
 }
+

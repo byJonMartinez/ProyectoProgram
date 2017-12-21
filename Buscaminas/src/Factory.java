@@ -1,19 +1,14 @@
 
-public class Factory {
 
-	//Atributos
-	
+public class Factory {
+		//atributos
 	private static Factory miFactory = new Factory();
 	
-	
-	//Constructor
-	
+		//constructora
 	private Factory(){
 	}
 	
-	
-	//Métodos
-	
+		//metodos
 	public static Factory getFactory(){
 		if (miFactory==null){
 			miFactory= new Factory();
@@ -40,5 +35,4 @@ public class Factory {
 		
 		return unaCasilla;
 	}
-	
 }

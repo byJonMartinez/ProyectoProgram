@@ -2,17 +2,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Observable;
 import java.util.Observer;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 
+@SuppressWarnings("deprecation")
 public class Boton extends JButton implements Observer{
 
 	//Atributos
 	int x;
 	int y;
 
-	//Constructor
+	//Constructora
 	public Boton(int px, int py){
 		
 		x= px;
@@ -80,6 +82,9 @@ public class Boton extends JButton implements Observer{
 		}
 		updateUI();	
 	}
+
+	
+
 
 
 }

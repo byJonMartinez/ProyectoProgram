@@ -1,10 +1,11 @@
+
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class PuntuacionesMedio extends Puntuaciones {
-
+public class PuntuacionesMedio extends Puntuaciones{
 	private static PuntuacionesMedio miPuntuacionesMedio;
 
 	private PuntuacionesMedio(String p){
@@ -24,7 +25,7 @@ public class PuntuacionesMedio extends Puntuaciones {
 	public void escribirPuntuaciones()throws IOException {
 
 		int i = 0;
-		String ruta = "C:\\Users\\FAMILIA FELIZ\\git\\ProyectoProgram\\Buscaminas\\src\\pNormal.txt";
+		String ruta = "C:\\Users\\FAMILIA FELIZ\\git\\ProyectoProgram\\Buscaminas\\src";
 		File archivo = new File(ruta);
 		BufferedWriter bw;
 		bw = new BufferedWriter(new FileWriter(archivo));
@@ -38,6 +39,4 @@ public class PuntuacionesMedio extends Puntuaciones {
 		bw.close();
 
 	}
-	
-	
 }
